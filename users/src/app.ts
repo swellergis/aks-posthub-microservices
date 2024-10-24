@@ -2,7 +2,8 @@ import express from 'express';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
-import { errorHandler } from './middleware/error-handler/error-handler';import { PageNotFound } from './middleware/error-handler/404';
+import { errorHandler } from './middleware/error-handler/error-handler';
+import { PageNotFound } from './middleware/error-handler/404';
 
 import { healthcheckRouter } from './routes/healthcheck';
 import { activeUserRouter } from './routes/active-user';
