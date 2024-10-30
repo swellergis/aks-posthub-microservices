@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name:  ns-posthub--env--
+  name:  ns-posthub--env
   labels:
-    name: ns-posthub--env--
+    name: ns-posthub--env
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  posts-mongo
-  namespace: ns-posthub--env--
+  namespace: ns-posthub--env
   labels:
     name:  posts-mongo
 spec:
@@ -47,7 +47,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name:  posts-mongo-service
-  namespace: ns-posthub--env--
+  namespace: ns-posthub--env
 spec:
   selector:
     name: posts-mongo

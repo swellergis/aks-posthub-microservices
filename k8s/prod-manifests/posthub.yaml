@@ -1,28 +1,28 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name:  ns-posthub--env--
+  name:  ns-posthub--env
   labels:
-    name: ns-posthub--env--
+    name: ns-posthub--env
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: posthub--env--
-  namespace: ns-posthub--env--
+  name: posthub--env
+  namespace: ns-posthub--env
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: posthub--env--
+      app: posthub--env
   template:
     metadata:
       labels:
-        app: posthub--env--
+        app: posthub--env
     spec:
       containers:
-      - name: posthub--env--
+      - name: posthub--env
         image: __ImageTag__
         env:
         - name: MONGO_URI
@@ -63,14 +63,14 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name:  posthub-service--env--
-  namespace: ns-posthub--env--
+  name:  posthub-service--env
+  namespace: ns-posthub--env
 spec:
   selector:
-    app:  posthub--env--
+    app:  posthub--env
   type:  ClusterIP
   ports:
-  - name:  posthub--env--
+  - name:  posthub--env
     port:  3000
     targetPort:  3000
     protocol:  TCP
