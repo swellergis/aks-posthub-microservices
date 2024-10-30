@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: nats-eventhub
-        image: nats-streaming:0.24.0
+        image: nats-streaming:0.25.6
         args: [
           '-p',
           '4222',
