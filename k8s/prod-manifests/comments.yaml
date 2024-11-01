@@ -42,7 +42,7 @@ spec:
           value: 'http://nats-eventhub-service:4222'
         resources:
           requests:
-              cpu: 250m
+              cpu: 500m
               memory: 350Mi
           limits:
             memory: "900Mi"
