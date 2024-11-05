@@ -25,13 +25,17 @@ spec:
         # image: nats-streaming:0.25.6
         image: natsio/nats-box:0.14.5
         args: [
-          '--port', '4222',
-          '--http_port', '8222',
-          '--hb_interval', '5s',      
-          '--hb_timeout', '5s',       
-          '--hb_fail_count', '2',     
-          '--stan_debug', 
-          '--cluster_id', 'posthubcluster'
+          '-p',
+          '4222',
+          '-m',
+          '8222',
+          '-hbi',
+          '5s',
+          '-hbf',
+          '2',
+          '-SD',
+          '-cid',
+          'posthubcluster',
         ]
         resources:
           requests:
