@@ -32,7 +32,7 @@ spec:
             memory: "900Mi"
             cpu: "1100m"
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
 
 
 
@@ -48,6 +48,6 @@ spec:
   type:  ClusterIP
   ports:
   - name:  ui^^env^^
-    port:  3000
-    targetPort:  3000
+    port:  3001
+    targetPort:  3001
     protocol:  TCP
