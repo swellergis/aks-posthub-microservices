@@ -22,19 +22,16 @@ spec:
     spec:
       containers:
       - name: nats-eventhub
-        image: nats-streaming:0.25.6
+        # image: nats-streaming:0.25.6
+        image: nats-streaming:0.24.0
         args: [
-          '-p',
-          '4222',
-          '-m',
-          '8222',
-          '-hbi',
-          '5s',
-          '-hbf',
-          '2',
-          '-SD',
-          '-cid',
-          'posthubcluster',
+          '--port', '4222',
+          '--http_port', '8222',
+          '--hb_interval', '5s',      
+          '--hb_timeout', '5s',       
+          '--hb_fail_count', '2',     
+          '--stan_debug', 
+          '--cluster_id', 'posthubcluster'
         ]
         resources:
           requests:
