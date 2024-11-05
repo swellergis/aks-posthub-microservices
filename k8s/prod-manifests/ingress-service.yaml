@@ -58,5 +58,5 @@ spec:
           service:
             name: ui-service^^env^^
             port:
-              number: 3001
+              number: 3000
         pathType: Prefix
