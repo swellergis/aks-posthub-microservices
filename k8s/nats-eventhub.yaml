@@ -23,7 +23,7 @@ spec:
       containers:
       - name: nats-eventhub
         # image: nats-streaming:0.25.6
-        image: nats-streaming:0.24.0
+        image: natsio/nats-box:0.14.5
         args: [
           '--port', '4222',
           '--http_port', '8222',
