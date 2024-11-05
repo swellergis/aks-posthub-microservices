@@ -24,19 +24,19 @@ spec:
       - name: nats-eventhub
         # image: nats-streaming:0.25.6
         image: natsio/nats-box:0.14.5
-        args: [
-          '-p',
-          '4222',
-          '-m',
-          '8222',
-          '-hbi',
-          '5s',
-          '-hbf',
-          '2',
-          '-SD',
-          '-cid',
-          'posthubcluster',
-        ]
+        # args: [
+        #   '-p',
+        #   '4222',
+        #   '-m',
+        #   '8222',
+        #   '-hbi',
+        #   '5s',
+        #   '-hbf',
+        #   '2',
+        #   '-SD',
+        #   '-cid',
+        #   'posthubcluster',
+        # ]
         resources:
           requests:
             memory: "500Mi"
