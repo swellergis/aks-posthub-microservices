@@ -30,12 +30,7 @@ spec:
           '4222',
           '-m',
           '8222',
-          '-hbi',
-          '5s',
-          '-hbf',
-          '2',
-          '-SD',
-          '-cid',
+          '-n',
           'posthubcluster'
         ]
         resources:
