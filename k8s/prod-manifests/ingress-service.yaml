@@ -12,10 +12,14 @@ metadata:
   name: posthub-aks-ingress^^env^^
   namespace: ns-posthub^^env^^
   annotations:
-    kubernetes.io/ingress.class: azure/application-gateway
-    appgw.ingress.kubernetes.io/tls-redirect: "true"
-    cert-manager.k8s.io/cluster-issuer: letsencrypt-staging #change to prod after initial testing
+    # kubernetes.io/ingress.class: azure/application-gateway
+    # appgw.ingress.kubernetes.io/tls-redirect: "true"
+    # cert-manager.k8s.io/cluster-issuer: letsencrypt-staging #change to prod after initial testing
     # cert-manager.k8s.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: azure/application-gateway
+    cert-manager.io/issuer: letsencrypt-staging-agic
+    cert-manager.io/acme-challenge-type: http01
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   tls:
     - hosts:
