@@ -24,7 +24,7 @@ spec:
       - name: nats-eventhub
         # image: nats-streaming:0.25.6
         # image: natsio/nats-box:0.14.5
-        image: nats:latest
+        image: nats:2-alpine
         args: [
           '-p',
           '4222',

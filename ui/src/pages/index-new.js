@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-const Home = ({ loggedInUser, postList }) => {
+const HomeNew = ({ loggedInUser, postList }) => {
 
   return (
     <div className={styles.container}>
@@ -11,4 +11,4 @@ const Home = ({ loggedInUser, postList }) => {
   );
 };
 
-export default Home;
+export default HomeNew;

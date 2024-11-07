@@ -1,7 +1,4 @@
 import "../styles/globals.css";
-import axiosSrv from "../helpers/axios-client";
-import styles from "../styles/Home.module.css";
-import Header from "../components/Header";
 
 import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
