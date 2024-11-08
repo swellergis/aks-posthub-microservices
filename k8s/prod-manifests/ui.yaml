@@ -31,13 +31,6 @@ spec:
           limits:
             memory: "900Mi"
             cpu: "1100m"
-        readinessProbe:
-          httpGet:
-            path: /healthcheck
-            port: 3000
-            scheme: HTTP
-          initialDelaySeconds: 10
-          periodSeconds: 10
         ports:
         - containerPort: 3000
 
