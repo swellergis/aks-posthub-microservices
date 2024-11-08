@@ -12,7 +12,7 @@ metadata:
   name: posthub-aks-ingress^^env^^
   namespace: ns-posthub^^env^^
   annotations:
-    appgw.ingress.kubernetes.io/use-private-ip: "true"
+    appgw.ingress.kubernetes.io/use-private-ip: "false"
     appgw.ingress.kubernetes.io/appgw-ssl-certificate: "tls-cert"
     appgw.ingress.kubernetes.io/tls-redirect: "true"
     # cert-manager.k8s.io/cluster-issuer: letsencrypt-staging #change to prod after initial testing
