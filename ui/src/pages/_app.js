@@ -17,22 +17,4 @@ const MyApp = ({ Component, pageProps, loggedInUser }) => {
   );
 };
 
-MyApp.getInitialProps = async (myAppContext) => {
-  const backendClient = axiosSrv(myAppContext.ctx);
-  const { data } = await backendClient.get("/api/users/activeuser");
-
-  const pageProps = myAppContext.Component.getInitialProps
-    ? await myAppContext.Component.getInitialProps(
-        myAppContext.ctx,
-        backendClient,
-        data.loggedInUser
-      )
-    : {};
-
-  return {
-    pageProps,
-    ...data,
-  };
-};
-
 export default MyApp;
