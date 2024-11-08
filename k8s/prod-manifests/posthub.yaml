@@ -40,7 +40,8 @@ spec:
               fieldPath: metadata.name
         - name: NATS_URL
           # value: 'http://nats-eventhub-service:4222'
-          value: 'nats://127.0.0.1:4222'
+          # value: 'nats://127.0.0.1:4222'
+          value: 'http://0.0.0.0:4222'
         resources:
           requests:
               cpu: 250m
