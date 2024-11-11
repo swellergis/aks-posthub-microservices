@@ -7,7 +7,7 @@ const uiURL = process.env.NEXT_PUBLIC_SITE_URL;
 
 
 const MyApp = ({ json }) => {
-  console.log(JSON.stringify(json));
+  console.log('two' + JSON.stringify(json));
   return (
     <div>
       <p>_app.js</p>
@@ -16,8 +16,7 @@ const MyApp = ({ json }) => {
 };
 
 MyApp.getInitialProps = async (myAppContext) => {
-  console.log( 'foo' );
-  console.log( myAppContext );
+  const res = await fetch('/api/users/activeuser');
 
   return { json: [] };
 };
