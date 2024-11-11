@@ -18,14 +18,9 @@ const MyApp = ({ Component, pageProps, loggedInUser }) => {
 MyApp.getInitialProps = async (myAppContext) => {
   const backendClient = axiosSrv(myAppContext.ctx);
   const { data } = await backendClient.get("/api/users/activeuser");
+  console.log(data);
 
-  const pageProps = myAppContext.Component.getInitialProps
-    ? await myAppContext.Component.getInitialProps(
-        myAppContext.ctx,
-        backendClient,
-        data.loggedInUser
-      )
-    : {};
+  const pageProps = {};
 
   return {
     pageProps,
