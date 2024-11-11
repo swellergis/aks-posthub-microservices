@@ -6,8 +6,8 @@ import Head from "next/head";
 const uiURL = process.env.NEXT_PUBLIC_SITE_URL;
 
 
-const MyApp = ({ Component, pageProps, loggedInUser }) => {
-  // console.log(loggedInUser);
+const MyApp = ({ json }) => {
+  console.log(json);
   return (
     <div>
       <p>_app.js</p>
@@ -16,16 +16,13 @@ const MyApp = ({ Component, pageProps, loggedInUser }) => {
 };
 
 MyApp.getInitialProps = async (myAppContext) => {
-  const backendClient = axiosSrv(myAppContext.ctx);
-  const { data } = await backendClient.get("/api/users/activeuser");
-  console.log(data);
+  // const backendClient = axiosSrv(myAppContext.ctx);
+  // const { data } = await backendClient.get("/api/users/activeuser");
 
-  const pageProps = {};
+  const res = await fetch('/api/users/activeuser');
+  const json = await res.json();
 
-  return {
-    pageProps,
-    ...data,
-  };
+  return { json: json };
 };
 
 export default MyApp;
