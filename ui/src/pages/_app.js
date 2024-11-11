@@ -15,7 +15,7 @@ const MyApp = ({ json }) => {
   );
 };
 
-MyApp.getInitialProps = async (myAppContext) => {
+MyApp.getInitialProps = async () => {
   // const res = await fetch('/api/users/activeuser');
   const res = await fetch('/api/comments/healthcheck');
 
