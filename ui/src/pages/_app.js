@@ -16,15 +16,10 @@ const MyApp = ({ json }) => {
 };
 
 MyApp.getInitialProps = async (myAppContext) => {
-  // const backendClient = axiosSrv(myAppContext.ctx);
-  // const { data } = await backendClient.get("/api/users/activeuser");
-
   console.log( 'foo' );
-  const res = await fetch('/api/users/activeuser');
-  console.log( 'bar' );
-  const json = await res.json();
+  console.log( myAppContext );
 
-  return { json: json };
+  return { json: [] };
 };
 
 export default MyApp;
