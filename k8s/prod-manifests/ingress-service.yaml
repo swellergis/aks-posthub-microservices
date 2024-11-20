@@ -27,6 +27,7 @@ spec:
       - posthub^^env^^.40.112.137.156.nip.io
       secretName: posthub^^env^^-sec
   rules:
+  # - host: middleware.local
   - host: posthub^^env^^.40.112.137.156.nip.io
     http:
       paths:
