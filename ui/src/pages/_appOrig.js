@@ -9,7 +9,7 @@ import Head from "next/head";
 const uiURL = process.env.NEXT_PUBLIC_SITE_URL;
 
 
-const MyApp = ({ Component, pageProps, loggedInUser }) => {
+const MyAppOrig = ({ Component, pageProps, loggedInUser }) => {
   return (
     <div>
       <Head>
@@ -38,10 +38,9 @@ const MyApp = ({ Component, pageProps, loggedInUser }) => {
   );
 };
 
-MyApp.getInitialProps = async (myAppContext) => {
+MyAppOrig.getInitialProps = async (myAppContext) => {
   const backendClient = axiosSrv(myAppContext.ctx);
-  // const { data } = await backendClient.get("/api/users/activeuser");
-  const { data } = await backendClient.get("http://users-service-dev:3000/api/users/activeuser");
+  const { data } = await backendClient.get("/api/users/activeuser");
 
   const pageProps = myAppContext.Component.getInitialProps
     ? await myAppContext.Component.getInitialProps(
@@ -57,4 +56,4 @@ MyApp.getInitialProps = async (myAppContext) => {
   };
 };
 
-export default MyApp;
+export default MyAppOrig;

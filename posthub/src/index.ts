@@ -36,7 +36,7 @@ const postHubServerStart = async () => {
         throw new Error(`NATS_URL ENV is ${process.env.NATS_URL} and must be defined in the Kubernetes YAML File for this code to run in the Cluster`);
     }
 
-    console.log(natsClusterId, natsClientId, natsUrl, 'NATS Container reachable from the Comments Microservice');
+    console.log(natsClusterId, natsClientId, natsUrl, 'NATS Container reachable from the Posthub Microservice');
     
     try {
         await natsEventClass.connect(natsClusterId!, natsClientId!, natsUrl!);

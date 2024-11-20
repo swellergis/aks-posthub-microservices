@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { uiURL } from "../helpers/use-request";
 
-const Home = ({ loggedInUser, postList }) => {
+const HomeOrig = ({ loggedInUser, postList }) => {
   const postHub =
     postList?.length < 0
       ? []
@@ -55,10 +55,9 @@ const Home = ({ loggedInUser, postList }) => {
   );
 };
 
-Home.getInitialProps = async (context, backendClient, loggedInUser) => {
-  // const { data } = await backendClient.get("/api/posthub");
-  const { data } = await backendClient.get("http://posthub-service-dev:3000/api/posthub");
+HomeOrig.getInitialProps = async (context, backendClient, loggedInUser) => {
+  const { data } = await backendClient.get("/api/posthub");
   return { postList: data };
 };
 
-export default Home;
+export default HomeOrig;
